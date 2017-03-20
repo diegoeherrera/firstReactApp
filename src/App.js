@@ -7,8 +7,8 @@ constructor () {
      text:"",
      textE:""
    }
-
-   this.handleChange=this.handleChange.bind(this);
+   this.message="Escribi algo en el campo de texto y presiona Enter"
+   this.handleChange=this.handleChange.bind(this)
    this.handleEnter=this.handleEnter.bind(this)
 }
    handleChange(event){
@@ -16,42 +16,25 @@ constructor () {
    }
 
    handleEnter(event){
+
      if(event.key==="Enter"){
 
-      this.setState({textE:"asdasdasdasdas"})
+    //  console.log(this.state.text)
 
-      alert(this.state.textE)
+      alert(this.state.text)
      }
    }
-
-
-
-
-
-
-
 
   render(){
     return (
               <div>
+                <h3>{this.message}</h3>
                 <textarea type="text" value={this.state.text} onChange={this.handleChange} onKeyPress={this.handleEnter} />
-
               </div>
+
             )
   }
 
 }
-
-
-/*Revisar que el archivo index.js tenga:
-
-ReactDOM.render(
-  <App name="Diego" lastname="Herrera" />,
-  document.getElementById('root')
-);
-
-
-*/
-
 
 export default App
